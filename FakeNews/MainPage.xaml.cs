@@ -26,5 +26,23 @@ namespace FakeNews
         {
             this.InitializeComponent();
         }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void IconListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(FinancialListBoxItem.IsSelected)
+            {
+                TitleTextBlock.Text = "Financial";
+            }
+
+            else if(FoodListBoxItem.IsSelected)
+            {
+                TitleTextBlock.Text = "Food";
+            }
+        }
     }
 }
