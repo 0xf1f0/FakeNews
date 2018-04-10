@@ -22,9 +22,19 @@
 
         <RelativePanel>
             <Button Name="HamburgerButton" Style="{StaticResource MenuButtonStyle}" Content="&#xE700;" Click="HamburgerButton_Click" />
-            <TextBlock Name="TitleTextBlock" FontSize="18" FontWeight="Bold" RelativePanel.RightOf="HamburgerButton" Margin="20,0,0,0" RelativePanel.AlignVerticalCenterWith="HamburgerButton"/>
-            <TextBox Name="SearchTextBox" PlaceholderText="Search" FontSize="18" Width="200" RelativePanel.LeftOf="SearchButton"/>
-            <Button Name="SearchButton" Style="{StaticResource MenuButtonStyle}" Content="&#xE721;" RelativePanel.AlignRightWithPanel="True" Margin="0,0,20,0"/>
+            <TextBlock Name="TitleTextBlock" FontSize="18" FontWeight="Bold" RelativePanel.RightOf="HamburgerButton" Margin="20,0,0,0"
+                       RelativePanel.AlignVerticalCenterWith="HamburgerButton"/>
+            <StackPanel Orientation="Horizontal" RelativePanel.AlignRightWithPanel="True" BorderBrush="Gray" Margin="0,0,10,0">
+                <TextBox Name="SearchTextBox" PlaceholderText="Search" FontSize="18" Width="200"
+                     Background="White"
+                     BorderBrush="White"
+                     RelativePanel.LeftOf="SearchButton"/>
+                <Button Name="SearchButton" Style="{StaticResource MenuButtonStyle}" Content="&#xE721;"
+                    Foreground="Gray"
+                    Background="White"
+                    />
+            </StackPanel>
+            
         </RelativePanel>
 
         <SplitView Name="MySplitView"
@@ -54,10 +64,22 @@
             </SplitView.Pane>
 
             <SplitView.Content>
-                <Frame>
+                <Frame Name="MyFrame">
 
                 </Frame>
             </SplitView.Content>
         </SplitView>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:FieldModifier="NarrowLayout">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                    </VisualState.Setters>
+                 </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

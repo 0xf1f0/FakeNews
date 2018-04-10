@@ -25,6 +25,7 @@ namespace FakeNews
         public MainPage()
         {
             this.InitializeComponent();
+            MyFrame.Navigate(typeof(FinancialPage));
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
