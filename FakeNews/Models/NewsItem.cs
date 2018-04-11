@@ -18,7 +18,7 @@ namespace FakeNews.Models
 
     public class NewsItemManager
     {
-        private static List<NewsItem> getNewsItems()
+        public static List<NewsItem> GetNewsItems()
         {
             var items = new List<NewsItem>
             {

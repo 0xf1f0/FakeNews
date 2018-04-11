@@ -1,5 +1,4 @@
-﻿using FakeNews.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,20 +13,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace FakeNews
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class FoodPage : Page
+    public sealed partial class NewsTemplate : UserControl
     {
-        private List<NewsItem> NewsItems;
-        public FoodPage()
+        public Models.NewsItem NewsItem { get { return this.DataContext as Models.NewsItem;} }
+        public NewsTemplate()
         {
-            NewsItems = NewsItemManager.GetNewsItems().Where(p => p.Category == "Food").ToList();
             this.InitializeComponent();
+
+            //this.DataContextChanged += (s, e) => Bindings.Update();
         }
     }
 }

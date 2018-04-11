@@ -5,9 +5,21 @@
     xmlns:local="using:FakeNews"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:FakeNews.Models"
     mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    
+    <Grid>
+        <GridView ItemsSource="{x:Bind NewsItems}" Margin="10">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="data:NewsItem">
+                    <StackPanel Width="400" Height="400" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image Source="{x:Bind Image}"/>
+                        <TextBlock Text="{x:Bind Headline}"/>
+                        <TextBlock Text="{x:Bind Subhead}"/>
+                        <TextBlock Text="{x:Bind DateLine}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FakeNews.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,14 @@ namespace FakeNews
     /// </summary>
     public sealed partial class FinancialPage : Page
     {
+
+        private List<NewsItem> NewsItems;
+
         public FinancialPage()
         {
             this.InitializeComponent();
+            //NewsItems = NewsItemManager.GetNewsItems();
+            NewsItems = NewsItemManager.GetNewsItems().Where(p => p.Category == "Financial").ToList();
         }
     }
 }

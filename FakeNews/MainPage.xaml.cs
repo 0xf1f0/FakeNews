@@ -37,11 +37,13 @@ namespace FakeNews
         {
             if(FinancialListBoxItem.IsSelected)
             {
+                MyFrame.Navigate(typeof(FinancialPage));
                 TitleTextBlock.Text = "Financial";
             }
 
             else if(FoodListBoxItem.IsSelected)
             {
+                MyFrame.Navigate(typeof(FoodPage));
                 TitleTextBlock.Text = "Food";
             }
         }
